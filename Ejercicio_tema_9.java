@@ -1,49 +1,38 @@
 public class Ejercicio_tema_9 {
     public static void main(String[] args) {
 
-        Persona nombre = new Persona();
-        nombre.setTipo("Nombre: Adil");
+        Cliente cliente = new Cliente();
+        Trabajador trabajador = new Trabajador();
 
-        Persona edad = new Persona();
-        edad.setTipo( "Edad: 40");
+        cliente.nombre = "Omar";
+        cliente.edad = 30;
+        cliente.telefono =1234567799;
+        cliente.credito = 500.45;
 
-        Persona telefono= new Persona();
-        telefono.setTipo("Teléfono: 123456789");
+        System.out.println("Soy " + cliente.nombre + ", tengo " + cliente.edad + " años y mi telefono es " + cliente.telefono
+                + " y mi credito disponible es " + cliente.credito + "€");
 
-        System.out.println(nombre.getTipo());
-        System.out.println(edad.getTipo());
-        System.out.println(telefono.getTipo());
+        trabajador.nombre = "Antonio";
+        trabajador.edad = 35;
+        trabajador.telefono = 333888999;
+        trabajador.salario = 2500.95;
+        System.out.println("Soy " + trabajador.nombre + ", tengo " + trabajador.edad + " años y mi telefono es " + trabajador.telefono
+                + " y mi salario es de " + trabajador.salario + "€");
+
     }
 }
 
 class Persona {
-    private String tipo;
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-
+    int edad;
+    int telefono;
+    String nombre;
     }
 
-    public String getTipo() {
-        return this.tipo;
-    }
 
 class Cliente extends Persona {
-        public void Credito(){
-            System.out.println("Crédito: 25.000 euros");
-        }
-
+        double credito;
 
     }
-
-
 class Trabajador extends Persona {
-        public void Salario(){
-
-            System.out.println("Salario: 1.500 euros");
-        }
-
-
+        double salario;
     }
-
-}
